@@ -18,7 +18,7 @@ TagManager:
   - 
   - 
   - 
-  - Camera
+  - 
   - 
   - 
   - 
@@ -43,6 +43,12 @@ TagManager:
   m_SortingLayers:
   - name: Background
     uniqueID: 3373356191
+    locked: 0
+  - name: Assets
+    uniqueID: 1281824367
+    locked: 0
+  - name: Interactions
+    uniqueID: 4239570473
     locked: 0
   - name: Default
     uniqueID: 0
