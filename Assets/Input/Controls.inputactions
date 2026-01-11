@@ -13,15 +13,6 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
-                },
-                {
-                    "name": "Click",
-                    "type": "Button",
-                    "id": "6a589216-d268-4c5a-9e85-d16ef0e201c8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "Press",
-                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -134,15 +125,52 @@
                     "action": "Movement",
                     "isComposite": false,
                     "isPartOfComposite": true
+                }
+            ]
+        },
+        {
+            "name": "Mouse",
+            "id": "fdb9ff1f-7477-40e7-a90a-4c5f2432a9d8",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "098918b8-deee-4734-8051-35c224000cbe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 },
                 {
+                    "name": "Position",
+                    "type": "PassThrough",
+                    "id": "e54d6ddd-b078-4587-9d96-f73650080025",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
                     "name": "",
-                    "id": "79584e94-85f9-4bf0-9598-d8505df8da83",
-                    "path": "",
+                    "id": "b76bb08b-12d7-4b5e-9b5d-bc7f9eafe363",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b3034d44-2c82-48ca-bee8-ed31e9e7a4e4",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
