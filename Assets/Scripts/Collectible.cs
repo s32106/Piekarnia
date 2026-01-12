@@ -13,12 +13,12 @@ public class Collectible : MonoBehaviour
             return;
         }
         
-        //Inventory playerInventory = null;
-        //playerInventory = collision.gameObject.GetComponent<Inventory>();
+        Inventory playerInventory = null;
+        playerInventory = collision.gameObject.GetComponent<Inventory>();
         if (collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            //Inventory.instance.Increasecollectible(value);
+            Inventory.instance.Increasecollectible(value);
         }
 
     }
