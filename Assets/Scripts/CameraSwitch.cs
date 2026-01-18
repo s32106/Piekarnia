@@ -17,19 +17,13 @@ public class CameraSwitch : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.S))
+        if (Input.GetKeyDown(KeyCode.S) && StartCam.isActiveAndEnabled)
         {
             StartCam.gameObject.SetActive(false);
-            MainCam.gameObject.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.R) && MainCam.isActiveAndEnabled)
-        { 
             RecipeCam.gameObject.SetActive(true);
-            MainCam.gameObject.SetActive(false);
         }
 
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X) && RecipeCam.isActiveAndEnabled)
         {
             RecipeCam.gameObject.SetActive(false);
             MainCam.gameObject.SetActive(true);
