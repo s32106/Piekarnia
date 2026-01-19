@@ -14,14 +14,8 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
 
-    void Start()
-    {
-        //collectibleText.text = "Fruits: " + currentCollectible.ToString();
-    }
-
     public void Increasecollectible(int v)
     {
         currentCollectible += v;
-        //collectibleText.text = "Fruits: " + currentCollectible.ToString();
     }
 }

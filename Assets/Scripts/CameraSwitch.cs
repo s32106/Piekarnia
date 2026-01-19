@@ -7,6 +7,7 @@ public class CameraSwitch : MonoBehaviour
     public Camera MainCam;
     public Camera StartCam;
     public Camera RecipeCam;
+    private Inventory inventory;
 
     private void Start()
     {
@@ -27,6 +28,12 @@ public class CameraSwitch : MonoBehaviour
         {
             RecipeCam.gameObject.SetActive(false);
             MainCam.gameObject.SetActive(true);
+        }
+
+        if (int Inventory.currentCollectible = 7)
+        {
+            RecipeCam.gameObject.SetActive(true);
+            MainCam.gameObject.SetActive(false);
         }
     }
 }
