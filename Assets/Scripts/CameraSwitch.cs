@@ -1,5 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraSwitch : MonoBehaviour
@@ -11,7 +12,8 @@ public class CameraSwitch : MonoBehaviour
     public Camera ComicCam1;
     public Camera ComicCam2;
     public Camera ComicCam3;
-    private Inventory inventory;
+    public Inventory inventory;
+    public GameObject Blacha;
 
     private void Start()
     {
@@ -22,6 +24,8 @@ public class CameraSwitch : MonoBehaviour
         ComicCam1.gameObject.SetActive(false);
         ComicCam2.gameObject.SetActive(false);
         ComicCam3.gameObject.SetActive(false);
+
+        Blacha.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -38,9 +42,11 @@ public class CameraSwitch : MonoBehaviour
             MainCam.gameObject.SetActive(true);
         }
 
-        //if (int Inventory.currentCollectible = 7)
-        if (Input.GetKeyDown(KeyCode.C) && MainCam.isActiveAndEnabled)
+        //Włączenie komiksu po zebraniu wszytskich przedmiotów
+        //if (Input.GetKeyDown(KeyCode.C) && MainCam.isActiveAndEnabled)
+        if (inventory.currentCollectible == 6)
         {
+            Blacha.gameObject.SetActive(true);
             ComicCam0.gameObject.SetActive(true);
             MainCam.gameObject.SetActive(false);
         }
@@ -68,5 +74,13 @@ public class CameraSwitch : MonoBehaviour
             ComicCam3.gameObject.SetActive(false);
             MainCam.gameObject.SetActive(true);
         }
+
+        if (inventory.currentCollectible == 16)
+        //if (Input.GetKeyDown(KeyCode.C) && MainCam.isActiveAndEnabled)
+        {
+            ComicCam0.gameObject.SetActive(true);
+            MainCam.gameObject.SetActive(false);
+        }
+
     }
 }
