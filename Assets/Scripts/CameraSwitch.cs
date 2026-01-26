@@ -12,8 +12,9 @@ public class CameraSwitch : MonoBehaviour
     public Camera ComicCam1;
     public Camera ComicCam2;
     public Camera ComicCam3;
+    public Camera ComicCam4;
+    public Camera EndCam;
     public Inventory inventory;
-    public GameObject Blacha;
 
     private void Start()
     {
@@ -24,8 +25,8 @@ public class CameraSwitch : MonoBehaviour
         ComicCam1.gameObject.SetActive(false);
         ComicCam2.gameObject.SetActive(false);
         ComicCam3.gameObject.SetActive(false);
-
-        Blacha.gameObject.SetActive(false);
+        ComicCam4.gameObject.SetActive(false);
+        EndCam.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -46,7 +47,6 @@ public class CameraSwitch : MonoBehaviour
         //if (Input.GetKeyDown(KeyCode.C) && MainCam.isActiveAndEnabled)
         if (inventory.currentCollectible == 6)
         {
-            Blacha.gameObject.SetActive(true);
             ComicCam0.gameObject.SetActive(true);
             MainCam.gameObject.SetActive(false);
         }
@@ -54,6 +54,7 @@ public class CameraSwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && ComicCam0.isActiveAndEnabled)
         {
             ComicCam0.gameObject.SetActive(false);
+            Destroy(ComicCam0.gameObject);
             ComicCam1.gameObject.SetActive(true);
         }
 
@@ -66,20 +67,25 @@ public class CameraSwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && ComicCam2.isActiveAndEnabled)
         {
             ComicCam2.gameObject.SetActive(false);
+            ComicCam1.gameObject.SetActive(false);
             ComicCam3.gameObject.SetActive(true);
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && ComicCam3.isActiveAndEnabled)
         {
             ComicCam3.gameObject.SetActive(false);
-            MainCam.gameObject.SetActive(true);
+            ComicCam2.gameObject.SetActive(false);
+            ComicCam1.gameObject.SetActive(false);
+            ComicCam4.gameObject.SetActive(true);
         }
 
-        if (inventory.currentCollectible == 16)
-        //if (Input.GetKeyDown(KeyCode.C) && MainCam.isActiveAndEnabled)
+        if (Input.GetKeyDown(KeyCode.E) && ComicCam4.isActiveAndEnabled)
         {
-            ComicCam0.gameObject.SetActive(true);
-            MainCam.gameObject.SetActive(false);
+            ComicCam4.gameObject.SetActive(false);
+            ComicCam3.gameObject.SetActive(false);
+            ComicCam2.gameObject.SetActive(false);
+            ComicCam1.gameObject.SetActive(false);
+            EndCam.gameObject.SetActive(true);
         }
 
     }
